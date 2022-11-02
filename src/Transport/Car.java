@@ -245,6 +245,7 @@ public class Car {
         public void checkNumber() {
             if (number.length() != 9) {
                 System.out.println(" Номер страховки некорректный ");
+
             }
 
         }
