@@ -41,10 +41,11 @@ public class Main {
                 "Russia",
                 "Белорусский вокзал",
                 "Минск-Пассажирский");
-        Bus kamaz = new Bus("Камаз","пассажирский",2022,"Russia");
+        Bus kamaz = new Bus("Камаз", "пассажирский", 2022, "Russia");
         lastochka.setPriceTrip(3500);
         lastochka.setQauantyWagons(11);
         lastochka.setMaxSpeed(301);
+        lastochka.setTimeTrip(12.36);
         printTrainInfo(lastochka);
         System.out.println();
         printBusInfo(kamaz);
@@ -87,7 +88,8 @@ public class Main {
                 "\n Станция отправления: " + tarin.getDepartureStation() +
                 "\n Станция прибытия: " + tarin.getFinalStation() +
                 "\n Цена поездки: " + tarin.getPriceTrip() +
-                "\n количество вагонов: " + tarin.getQauantyWagons());
+                "\n количество вагонов: " + tarin.getQauantyWagons() +
+                "\n Время в пути: " + tarin.getTimeTrip());
     }
 
     private static void printBusInfo(Bus bus) {
