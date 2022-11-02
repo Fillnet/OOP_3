@@ -2,13 +2,9 @@ package Transport;
 
 import java.time.LocalDate;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends transport {
     private double engineVolume;
     private String color;
-    private final int productionYear;
-    private final String productionCountry;
     private String gears;
     private final String typeBody;
     private String regNumber;
@@ -19,58 +15,30 @@ public class Car {
 
     public Car(String brand,
                String model,
-               double engineVolume,
-               String color,
                Integer productionYear,
-               String productionCountry,
-               Key key,
-               Insurance insurance) {
+               String productionCountry) {
+        super(brand, model, productionYear, productionCountry);
+        this.engineVolume = 1.5;
         this.gears = "mechanic";
         this.typeBody = "Sedan";
         this.seatCount = 5;
         this.regNumber = "x000xx000";
         this.summerTyres = true;
 
-        if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-        if (productionCountry == null) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
 
-
-        if (productionYear == 0) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
         if (Double.compare(engineVolume, 0) == 0) {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
         }
-        if (color == null) {
-            this.color = "White";
-        } else {
-            this.color = color;
-        }
         if (key == null) {
             this.key = new Key();
-        }else {
+        } else {
             this.key = key;
         }
         if (insurance == null) {
             this.insurance = new Insurance();
-        }else {
+        } else {
             this.insurance = insurance;
         }
     }
@@ -95,17 +63,6 @@ public class Car {
         }
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null) {
-            this.color = "White";
-        } else {
-            this.color = color;
-        }
-    }
 
     public String getGears() {
         return gears;
@@ -139,22 +96,6 @@ public class Car {
         this.summerTyres = summerTyres;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
     public String getTypeBody() {
         return typeBody;
     }
@@ -177,7 +118,7 @@ public class Car {
         }
         return Character.isDigit(chars[1]) && Character.isDigit(chars[2]) && Character.isDigit(chars[3])
                 && Character.isDigit(chars[6]) && Character.isDigit(chars[7]) && Character.isDigit(chars[8]);
-        }
+    }
 
     public static class Key {
         private final boolean remoteRunEngine;
@@ -209,13 +150,13 @@ public class Car {
         public Insurance(LocalDate expireDate, double cost, String number) {
             if (expireDate == null) {
                 this.expireDate = LocalDate.now().plusDays(365);
-            }else {
+            } else {
                 this.expireDate = expireDate;
             }
             this.cost = cost;
             if (number == null) {
                 this.number = "123456789";
-            }else {
+            } else {
                 this.number = number;
             }
         }

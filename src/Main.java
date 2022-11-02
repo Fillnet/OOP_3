@@ -1,4 +1,6 @@
+import Transport.Bus;
 import Transport.Car;
+import Transport.tarin;
 
 import java.time.LocalDate;
 
@@ -8,51 +10,45 @@ public class Main {
                 null,
                 null,
                 0,
-                null,
-                0,
-                null,
-                null,
                 null);
         Car audi = new Car(
                 "Audi",
                 "A8",
-                3.0,
-                "Black",
-                2020,
-                "Germany",
-                null,
+                0,
                 null);
         audi.setRegNumber("в431оe199");
-        audi.setKey(new Car.Key(true,true));
+        audi.setKey(new Car.Key(true, true));
         audi.setSummerTyres(false);
-        audi.setInsurance(new Car.Insurance(LocalDate.now(),30000,"13345687"));
+        audi.setInsurance(new Car.Insurance(LocalDate.now(), 30000, "13345687"));
         Car bmw = new Car(
                 "BMW",
                 "Z8",
-                3.0,
-                "Black",
                 2021,
-                "Germany",
-                null,
-                null);
+                "Germany");
         Car kia = new Car(
                 "Kia",
                 "Sportage",
-                2.4,
-                "Red",
                 2018,
-                "Korea",
-                null,
-                null);
+                "Korea");
         Car hyundai = new Car(
                 "Hyundai",
                 "Avante",
-                1.6,
-                "Orange",
                 2016,
-                "Korea",
-                null,
-                null);
+                "Korea");
+        tarin lastochka = new tarin("Ласточка",
+                "В-901",
+                2011,
+                "Russia",
+                "Белорусский вокзал",
+                "Минск-Пассажирский");
+        Bus kamaz = new Bus("Камаз","пассажирский",2022,"Russia");
+        lastochka.setPriceTrip(3500);
+        lastochka.setQauantyWagons(11);
+        lastochka.setMaxSpeed(301);
+        printTrainInfo(lastochka);
+        System.out.println();
+        printBusInfo(kamaz);
+        System.out.println();
         printInfo(audi);
         audi.getInsurance().checkExpireDate();
         audi.getInsurance().checkNumber();
@@ -75,9 +71,29 @@ public class Main {
                 "\n рег.номер: " + car.getRegNumber() +
                 "\n шины: " + (car.isSummerTyres() ? "летняя" : "зимняя") + " резина" +
                 "\n доступ: " + (car.getKey().isWithoutKEyAcces() ? "без ключевой" : "ключевой") +
-                "\n запуск двигателя: " + (car.getKey().isRemoteRunEngine() ? "удаленный" : "обычный")+
-                "\n номер страховки: "+car.getInsurance().getNumber()+
-                "\n стоимость страховки: "+car.getInsurance().getCost()+
-                "\n срок действия страховки: "+car.getInsurance().getExpireDate());
+                "\n запуск двигателя: " + (car.getKey().isRemoteRunEngine() ? "удаленный" : "обычный") +
+                "\n номер страховки: " + car.getInsurance().getNumber() +
+                "\n стоимость страховки: " + car.getInsurance().getCost() +
+                "\n срок действия страховки: " + car.getInsurance().getExpireDate() +
+                "\n максимальная скорость: " + car.getMaxSpeed());
+    }
+
+    private static void printTrainInfo(tarin tarin) {
+        System.out.println("\n Поезд: " + tarin.getBrand() +
+                "\n Модель: " + tarin.getModel() +
+                "\n год выпуска: " + tarin.getProductionYear() +
+                "\n Страна производитель: " + tarin.getProductionCountry() +
+                "\n Скорость передвижения : " + tarin.getMaxSpeed() +
+                "\n Станция отправления: " + tarin.getDepartureStation() +
+                "\n Станция прибытия: " + tarin.getFinalStation() +
+                "\n Цена поездки: " + tarin.getPriceTrip() +
+                "\n количество вагонов: " + tarin.getQauantyWagons());
+    }
+
+    private static void printBusInfo(Bus bus) {
+        System.out.println("\n Марка автобуса: " + bus.getBrand() +
+                "\n модель: " + bus.getModel() +
+                "\n год выпуска: " + bus.getProductionYear() +
+                "\n Страна выпуска: " + bus.getProductionCountry());
     }
 }
