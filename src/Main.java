@@ -57,6 +57,7 @@ public class Main {
         audi.getInsurance().checkExpireDate();
         audi.getInsurance().checkNumber();
         System.out.println(audi.isCorrectRegNumber());
+
     }
 
     private static void printInfo(Car car) {
