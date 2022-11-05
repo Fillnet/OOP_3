@@ -120,6 +120,11 @@ public class Car extends transport {
                 && Character.isDigit(chars[6]) && Character.isDigit(chars[7]) && Character.isDigit(chars[8]);
     }
 
+    @Override
+    public void refill() {
+        System.out.println(" Заправляется дизелем");
+    }
+
     public static class Key {
         private final boolean remoteRunEngine;
         private final boolean withoutKEyAcces;

@@ -53,4 +53,9 @@ public class tarin extends transport{
     public void setQauantyWagons(int qauantyWagons) {
         this.qauantyWagons = qauantyWagons;
     }
+
+    @Override
+    public void refill() {
+        System.out.println(" Заправляется дизелем");
+    }
 }

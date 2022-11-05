@@ -54,6 +54,9 @@ public class Main {
         audi.getInsurance().checkExpireDate();
         audi.getInsurance().checkNumber();
         System.out.println(audi.isCorrectRegNumber());
+        System.out.println(audi);
+        System.out.println(lastochka);
+        System.out.println(kamaz);
 
 
     }
@@ -76,7 +79,9 @@ public class Main {
                 "\n номер страховки: " + car.getInsurance().getNumber() +
                 "\n стоимость страховки: " + car.getInsurance().getCost() +
                 "\n срок действия страховки: " + car.getInsurance().getExpireDate() +
-                "\n максимальная скорость: " + car.getMaxSpeed());
+                "\n максимальная скорость: " + car.getMaxSpeed()+
+                "\n Топливо: ");
+        car.refill();
     }
 
     private static void printTrainInfo(tarin tarin) {
@@ -90,6 +95,7 @@ public class Main {
                 "\n Цена поездки: " + tarin.getPriceTrip() +
                 "\n количество вагонов: " + tarin.getQauantyWagons() +
                 "\n Время в пути: " + tarin.getTimeTrip());
+        tarin.refill();
     }
 
     private static void printBusInfo(Bus bus) {
@@ -97,5 +103,7 @@ public class Main {
                 "\n модель: " + bus.getModel() +
                 "\n год выпуска: " + bus.getProductionYear() +
                 "\n Страна выпуска: " + bus.getProductionCountry());
+        bus.refill();
     }
+
 }
