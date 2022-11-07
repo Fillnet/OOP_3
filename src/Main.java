@@ -18,6 +18,27 @@ public class Main {
         Cargo ford = new Cargo("Ford", "Transporter", 4.5);
         Cargo tesla = new Cargo("Tesla", "Myphic", 6.2);
         Cargo zil = new Cargo("Zil", "3151", 5.2);
+        System.out.println(granta.getBrand()+" "+granta.getModel());
+        granta.startMoving();
+        granta.stopMoving();
+        System.out.println(granta.bestTimeCircle());
+        System.out.println(granta.pitStop());
+        System.out.println(granta.maxSpeed());
+        audi.startMoving();
+        audi.stopMoving();
+        System.out.println(audi.bestTimeCircle());
+        System.out.println(audi.pitStop());
+        System.out.println(audi.maxSpeed());
+        zil.startMoving();
+        zil.stopMoving();
+        System.out.println(zil.bestTimeCircle());
+        System.out.println(zil.pitStop());
+        System.out.println(zil.maxSpeed());
+        liaz.startMoving();
+        liaz.stopMoving();
+        System.out.println(liaz.bestTimeCircle());
+        System.out.println(liaz.pitStop());
+        System.out.println(liaz.maxSpeed());
 
 //        Car hyundai = new Car(
 //                "Hyundai",

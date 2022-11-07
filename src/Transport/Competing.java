@@ -1,6 +1,6 @@
 package Transport;
 
-public interface Сompeting {
+public interface Competing {
     String pitStop();
 
     int bestTimeCircle();
