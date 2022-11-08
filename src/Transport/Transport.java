@@ -1,6 +1,5 @@
 package Transport;
 
-import java.util.Objects;
 
 public abstract class Transport {
     private final String brand;

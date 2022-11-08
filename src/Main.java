@@ -25,7 +25,7 @@ public class Main {
         Cargo zil = new Cargo("Zil", "3151", 5.2);
         Driver vasya = new DriverB("VAsya", "B", 10, granta);
         Driver senna = new DriverC("Aaron Senna", "C", 25, tesla);
-        Driver petryxa = new DriverD("Petryxa", "B", 5, pazik);
+        Driver petryxa = new DriverD("Petryxa", "D", 5, pazik);
         System.out.println(vasya);
         System.out.println(petryxa);
         System.out.println(senna);

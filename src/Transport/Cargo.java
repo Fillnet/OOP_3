@@ -1,6 +1,5 @@
 package Transport;
 
-import java.io.PrintStream;
 
 public class Cargo extends Transport implements Competing{
     public Cargo(String brand, String model, double engineVolume) {
