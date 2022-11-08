@@ -1,6 +1,6 @@
 package Transport;
 
-import java.time.LocalDate;
+import java.io.PrintStream;
 
 public class Car extends Transport implements Competing {
     public Car(String brand, String model, double engineVolume) {
@@ -9,27 +9,37 @@ public class Car extends Transport implements Competing {
 
     @Override
     public void startMoving() {
-        System.out.println("Стартует");
+        System.out.printf(" Автомобиль %s %s Стартует",
+                this.getBrand(),
+                this.getModel());
     }
 
     @Override
     public void stopMoving() {
-        System.out.println("Останавливается");
+        System.out.printf(" Автомобиль %s %s Останавливается",
+                this.getBrand(),
+                this.getModel());
     }
 
     @Override
-    public String pitStop() {
-        return "3 пит стопа";
+    public void pitStop() {
+        System.out.printf(" Автомобиль %s %s заезжал на пит-стоп 3 раза ",
+                this.getBrand(),
+                this.getModel());
     }
 
     @Override
-    public int bestTimeCircle() {
-        return 15;
+    public void bestTimeCircle() {
+                System.out.printf(" Автомобиль %s %s проехал круг за 15 секунд",
+                        this.getBrand(),
+                        this.getModel());
     }
 
     @Override
-    public int maxSpeed() {
-        return 250;
+    public void maxSpeed() {
+                System.out.printf(" Автомобиль %s %s двигался с максимальной скоростью 250 км/ч",
+                        this.getBrand(),
+                        this.getModel());
     }
 }
 

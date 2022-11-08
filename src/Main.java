@@ -1,6 +1,11 @@
+import Driver.Driver;
+import Driver.DriverB;
+import Driver.DriverC;
+import Driver.DriverD;
 import Transport.Bus;
 import Transport.Car;
 import Transport.Cargo;
+import Transport.Transport;
 //import Transport.Train;
 import java.time.LocalDate;
 
@@ -18,28 +23,26 @@ public class Main {
         Cargo ford = new Cargo("Ford", "Transporter", 4.5);
         Cargo tesla = new Cargo("Tesla", "Myphic", 6.2);
         Cargo zil = new Cargo("Zil", "3151", 5.2);
-        System.out.println(granta.getBrand()+" "+granta.getModel());
+        Driver vasya = new DriverB("VAsya", "B", 10, granta);
+        Driver senna = new DriverC("Aaron Senna", "C", 25, tesla);
+        Driver petryxa = new DriverD("Petryxa", "B", 5, pazik);
+        System.out.println(vasya);
+        System.out.println(petryxa);
+        System.out.println(senna);
         granta.startMoving();
-        granta.stopMoving();
-        System.out.println(granta.bestTimeCircle());
-        System.out.println(granta.pitStop());
-        System.out.println(granta.maxSpeed());
-        audi.startMoving();
-        audi.stopMoving();
-        System.out.println(audi.bestTimeCircle());
-        System.out.println(audi.pitStop());
-        System.out.println(audi.maxSpeed());
-        zil.startMoving();
-        zil.stopMoving();
-        System.out.println(zil.bestTimeCircle());
-        System.out.println(zil.pitStop());
-        System.out.println(zil.maxSpeed());
-        liaz.startMoving();
-        liaz.stopMoving();
-        System.out.println(liaz.bestTimeCircle());
-        System.out.println(liaz.pitStop());
-        System.out.println(liaz.maxSpeed());
-
+        granta.pitStop();
+        granta.maxSpeed();
+        granta.bestTimeCircle();
+        System.out.println();
+        tesla.startMoving();
+        tesla.pitStop();
+        tesla.maxSpeed();
+        tesla.bestTimeCircle();
+        System.out.println();
+        pazik.startMoving();
+        pazik.pitStop();
+        pazik.maxSpeed();
+        pazik.bestTimeCircle();
 //        Car hyundai = new Car(
 //                "Hyundai",
 //                "Avante",

@@ -1,5 +1,7 @@
 package Transport;
 
+import java.io.PrintStream;
+
 public class Cargo extends Transport implements Competing{
     public Cargo(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
@@ -7,26 +9,36 @@ public class Cargo extends Transport implements Competing{
 
     @Override
     public void startMoving() {
-        System.out.println("Стартует");
+        System.out.printf(" Автомобиль %s %s Стартует",
+                this.getBrand(),
+                this.getModel());
     }
 
     @Override
     public void stopMoving() {
-        System.out.println("Останавливается");
+        System.out.printf(" Автомобиль %s %s Останавливается",
+                this.getBrand(),
+                this.getModel());
     }
 
     @Override
-    public String pitStop() {
-        return "5 пит стопа";
+    public void pitStop() {
+        System.out.printf(" Автомобиль %s %s заезжал на пит-стоп 2 раза ",
+                this.getBrand(),
+                this.getModel());
     }
 
     @Override
-    public int bestTimeCircle() {
-        return 68;
+    public void bestTimeCircle() {
+        System.out.printf(" Автомобиль %s %s проехал круг за 35 секунд",
+                this.getBrand(),
+                this.getModel());
     }
 
     @Override
-    public int maxSpeed() {
-        return 120;
+    public void maxSpeed() {
+        System.out.printf(" Автомобиль %s %s двигался с максимальной скоростью 190 км/ч",
+                this.getBrand(),
+                this.getModel());
     }
 }

@@ -1,9 +1,9 @@
 package Transport;
 
 public interface Competing {
-    String pitStop();
+    void pitStop();
 
-    int bestTimeCircle();
+    void bestTimeCircle();
 
-    int maxSpeed();
+    void maxSpeed();
 }
