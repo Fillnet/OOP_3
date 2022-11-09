@@ -2,9 +2,13 @@ package Transport;
 
 
 public class Car extends Transport implements Competing {
-    public Car(String brand, String model, double engineVolume) {
+    private BodyType bodyType;
+    public Car(String brand, String model, double engineVolume,BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType=bodyType;
     }
+
+
 
     @Override
     public void startMoving() {
@@ -18,6 +22,15 @@ public class Car extends Transport implements Competing {
         System.out.printf(" Автомобиль %s %s Останавливается",
                 this.getBrand(),
                 this.getModel());
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по авто не достаточно ");
+        } else {
+            System.out.println("Автомобиль: "+getBrand()+" "+getModel()+" Тип кузова: " + getBodyType());
+        }
     }
 
     @Override
@@ -39,6 +52,13 @@ public class Car extends Transport implements Competing {
                 System.out.printf(" Автомобиль %s %s двигался с максимальной скоростью 250 км/ч",
                         this.getBrand(),
                         this.getModel());
+    }
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 }
 

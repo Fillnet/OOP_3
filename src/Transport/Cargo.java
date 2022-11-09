@@ -1,9 +1,12 @@
 package Transport;
 
 
-public class Cargo extends Transport implements Competing{
-    public Cargo(String brand, String model, double engineVolume) {
+public class Cargo extends Transport implements Competing {
+    private LiftingСapacity liftingСapacity;
+
+    public Cargo(String brand, String model, double engineVolume, LiftingСapacity liftingСapacity) {
         super(brand, model, engineVolume);
+        this.liftingСapacity = liftingСapacity;
     }
 
     @Override
@@ -18,6 +21,17 @@ public class Cargo extends Transport implements Competing{
         System.out.printf(" Автомобиль %s %s Останавливается",
                 this.getBrand(),
                 this.getModel());
+    }
+
+    @Override
+    public void printType() {
+        if (liftingСapacity == null) {
+            System.out.println("Данных по авто не достаточно ");
+        } else {
+            String from = liftingСapacity.getFrom() == null ? "" : " от " + liftingСapacity.getFrom();
+            String to = liftingСapacity.getTo() == null ? "" : " до " + liftingСapacity.getTo();
+            System.out.println("Грузовик: "+getBrand()+" "+getModel()+" Класс грузоподъемности: " + getLiftingСapacity() + " " + from+"т" + to+"т");
+        }
     }
 
     @Override
@@ -39,5 +53,13 @@ public class Cargo extends Transport implements Competing{
         System.out.printf(" Автомобиль %s %s двигался с максимальной скоростью 190 км/ч",
                 this.getBrand(),
                 this.getModel());
+    }
+
+    public LiftingСapacity getLiftingСapacity() {
+        return liftingСapacity;
+    }
+
+    public void setLiftingСapacity(LiftingСapacity liftingСapacity) {
+        this.liftingСapacity = liftingСapacity;
     }
 }
