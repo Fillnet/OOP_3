@@ -1,9 +1,9 @@
 package Transport;
 
 
-public class Car extends Transport implements Competing {
+public class PassengerCar extends Transport implements Competing {
     private BodyType bodyType;
-    public Car(String brand, String model, double engineVolume,BodyType bodyType) {
+    public PassengerCar(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
         this.bodyType=bodyType;
     }
@@ -12,7 +12,7 @@ public class Car extends Transport implements Competing {
 
     @Override
     public void startMoving() {
-        System.out.printf(" Автомобиль %s %s Стартует",
+        System.out.printf("Автомобиль %s %s Стартует",
                 this.getBrand(),
                 this.getModel());
     }
@@ -31,6 +31,11 @@ public class Car extends Transport implements Competing {
         } else {
             System.out.println("Автомобиль: "+getBrand()+" "+getModel()+" Тип кузова: " + getBodyType());
         }
+    }
+
+    @Override
+    public boolean diagnostic() {
+        return Math.random()>0.5;
     }
 
     @Override
@@ -72,7 +77,7 @@ public class Car extends Transport implements Competing {
 //    private Key key;
 //    private Insurance insurance;
 //
-//    public Car(String brand,
+//    public PassengerCar(String brand,
 //               String model,
 //               Integer productionYear,
 //               String productionCountry) {

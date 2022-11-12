@@ -1,17 +1,17 @@
 package Transport;
 
 
-public class Cargo extends Transport implements Competing {
+public class Truck extends Transport implements Competing {
     private LiftingСapacity liftingСapacity;
 
-    public Cargo(String brand, String model, double engineVolume, LiftingСapacity liftingСapacity) {
+    public Truck(String brand, String model, double engineVolume, LiftingСapacity liftingСapacity) {
         super(brand, model, engineVolume);
         this.liftingСapacity = liftingСapacity;
     }
 
     @Override
     public void startMoving() {
-        System.out.printf(" Автомобиль %s %s Стартует",
+        System.out.printf("Автомобиль %s %s Стартует",
                 this.getBrand(),
                 this.getModel());
     }
@@ -32,6 +32,11 @@ public class Cargo extends Transport implements Competing {
             String to = liftingСapacity.getTo() == null ? "" : " до " + liftingСapacity.getTo();
             System.out.println("Грузовик: "+getBrand()+" "+getModel()+" Класс грузоподъемности: " + getLiftingСapacity() + " " + from+"т" + to+"т");
         }
+    }
+
+    @Override
+    public boolean diagnostic() {
+        return Math.random()>0.75;
     }
 
     @Override

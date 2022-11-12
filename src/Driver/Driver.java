@@ -4,7 +4,7 @@ import Transport.Transport;
 
 public class Driver<T extends Transport> {
    private final  String name;
-   private final String driverLicense;
+   private String driverLicense;
    private final int drivingExperience;
    private final T car;
 
@@ -16,6 +16,7 @@ public class Driver<T extends Transport> {
         this.driverLicense = driverLicense;
         this.drivingExperience = drivingExperience;
         this.car = car;
+        setDriverLicense(driverLicense);
     }
 
     public void startDriving(){
@@ -44,6 +45,14 @@ public class Driver<T extends Transport> {
 
     public T getCar() {
         return car;
+    }
+
+    public void setDriverLicense(String driverLicense) {
+        if (driverLicense == null) {
+            throw new IllegalArgumentException("Необходимо указать категорию прав! ");
+        }
+        this.driverLicense = driverLicense;
+
     }
 
     @Override

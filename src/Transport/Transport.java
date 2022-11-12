@@ -60,4 +60,7 @@ public abstract class Transport {
     public double getEngineVolume() {
         return engineVolume;
     }
+
+    public abstract boolean diagnostic();
+
 }

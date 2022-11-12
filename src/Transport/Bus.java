@@ -10,7 +10,7 @@ public class Bus extends Transport implements Competing {
 
     @Override
     public void startMoving() {
-        System.out.printf(" Автомобиль %s %s Стартует",
+        System.out.printf("Автомобиль %s %s Стартует",
                 this.getBrand(),
                 this.getModel());
     }
@@ -34,8 +34,16 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public boolean diagnostic() {
+        System.out.printf("\nАвтобус %s %s не нуждается в диагностике!",
+                this.getBrand(),
+                this.getModel());
+        return true;
+    }
+
+    @Override
     public void pitStop() {
-        System.out.printf(" Автомобиль %s %s заезжал на пит-стоп 4 раза ",
+        System.out.printf(" Автобус %s %s заезжал на пит-стоп 4 раза ",
                 this.getBrand(),
                 this.getModel());
     }

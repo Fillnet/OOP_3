@@ -1,11 +1,11 @@
 package Driver;
 
-import Transport.Cargo;
+import Transport.Truck;
 
-public class DriverC extends Driver<Cargo> {
+public class DriverC extends Driver<Truck> {
 
-    public DriverC(String name, String driverLicense, int drivingExperience, Cargo cargo) {
-        super(name, "C", drivingExperience, cargo);
+    public DriverC(String name, String driverLicense, int drivingExperience, Truck truck) {
+        super(name, "C", drivingExperience, truck);
     }
 
     @Override
