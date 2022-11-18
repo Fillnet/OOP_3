@@ -40,6 +40,11 @@ public class Truck extends Transport implements Competing {
     }
 
     @Override
+    public void repair() {
+        System.out.println("Грузовик "+getBrand()+" "+getModel()+" отремонтирована");
+    }
+
+    @Override
     public void pitStop() {
         System.out.printf(" Автомобиль %s %s заезжал на пит-стоп 2 раза ",
                 this.getBrand(),

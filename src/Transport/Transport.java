@@ -1,6 +1,11 @@
 package Transport;
 
 
+import Driver.Driver;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport {
     private final String brand;
     private String model;
@@ -9,10 +14,11 @@ public abstract class Transport {
 //    private String color;
 //    private int maxSpeed;
     private double engineVolume;
+    private final List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Sponsor> sponsors = new ArrayList<>();
+    private final List<Mechanic<?>> mechanics = new ArrayList<>();
 
     public Transport(String brand, String model, double engineVolume) {
-//        this.color = "White";
-//        this.maxSpeed = 220;
         if (brand == null) {
             this.brand = "default";
         } else {
@@ -25,20 +31,9 @@ public abstract class Transport {
             }
             if (engineVolume == 0) {
                 this.engineVolume = 1.5;
-            }else {
+            } else {
                 this.engineVolume = engineVolume;
             }
-//        if (productionCountry == null) {
-//            this.productionCountry = "default";
-//        } else {
-//            this.productionCountry = productionCountry;
-//        }
-//        if (productionYear == 0) {
-//            this.productionYear = 2000;
-//        } else {
-//            this.productionYear = productionYear;
-//        }
-
         }
 
 
@@ -47,6 +42,7 @@ public abstract class Transport {
     public abstract void startMoving();
 
     public abstract void stopMoving();
+
     public abstract void printType();
 
     public String getBrand() {
@@ -61,6 +57,29 @@ public abstract class Transport {
         return engineVolume;
     }
 
+    public void addDriver(Driver<?> driver) {
+        drivers.add(driver);
+    } public void addSponsor(Sponsor sponsor) {
+        sponsors.add(sponsor);
+    } public void addMechanic(Mechanic<?> mechanic) {
+        mechanics.add(mechanic);
+    }
+
     public abstract boolean diagnostic();
 
+    public void repair() {
+
+    }
+
+    public List<Driver<?>> getDrivers() {
+        return drivers;
+    }
+
+    public List<Sponsor> getSponsors() {
+        return sponsors;
+    }
+
+    public List<Mechanic<?>> getMechanics() {
+        return mechanics;
+    }
 }
