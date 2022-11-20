@@ -12,6 +12,7 @@ import Transport.Transport;
 import Transport.Mechanic;
 import java.util.List;
 import Transport.Sponsor;
+import Transport.ServiceStation;
 import java.util.logging.Logger;
 
 
@@ -80,6 +81,18 @@ public class Main {
         pazik.printType();
         for (Transport transport : transports) {
             printListInfo(transport);
+            ServiceStation<PassengerCar> corolko = new ServiceStation<PassengerCar>("Corolko");
+            ServiceStation<Truck> michelin = new ServiceStation<Truck>("Michelin");
+            corolko.addCarService(granta);
+            corolko.addCarService(audi);
+            corolko.addCarService(bmw);
+            corolko.addCarService(kia);
+            michelin.addCarService(iveko);
+            michelin.addCarService(tesla);
+            michelin.addCarService(zil);
+            michelin.addCarService(ford);
+            corolko.techInspection();
+            michelin.techInspection();
         }
     }
 
