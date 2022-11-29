@@ -72,4 +72,5 @@ public class Truck extends Transport implements Competing {
     public void setLiftingСapacity(LiftingСapacity liftingСapacity) {
         this.liftingСapacity = liftingСapacity;
     }
+
 }

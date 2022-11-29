@@ -93,7 +93,9 @@ public class Main {
             michelin.addCarService(ford);
             corolko.techInspection();
             michelin.techInspection();
+
         }
+
     }
 
     private static void printListInfo(Transport transport) {
@@ -108,6 +110,7 @@ public class Main {
         for (Mechanic<?> mechanic : transport.getMechanics()) {
             System.out.println(mechanic.getName()+" из компании "+mechanic.getCompany());
         }
+
     }
     private static void service(Transport... transports) {
         for (Transport transport : transports) {
@@ -123,5 +126,7 @@ public class Main {
                 }
             }
         }
+
     }
+
 }

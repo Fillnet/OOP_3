@@ -74,4 +74,5 @@ public class Bus extends Transport implements Competing {
     public void setCapacity(Capacity capacity) {
         this.capacity = capacity;
     }
+
 }

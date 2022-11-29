@@ -70,4 +70,5 @@ public class PassengerCar extends Transport implements Competing {
     public void setBodyType(BodyType bodyType) {
         this.bodyType = bodyType;
     }
+
 }

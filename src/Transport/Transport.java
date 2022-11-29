@@ -3,8 +3,7 @@ package Transport;
 
 import Driver.Driver;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class Transport {
     private final String brand;
@@ -14,9 +13,9 @@ public abstract class Transport {
 //    private String color;
 //    private int maxSpeed;
     private double engineVolume;
-    private final List<Driver<?>> drivers = new ArrayList<>();
-    private final List<Sponsor> sponsors = new ArrayList<>();
-    private final List<Mechanic<?>> mechanics = new ArrayList<>();
+    private final Set<Driver<?>> drivers =     new HashSet<>();
+    private final Set<Sponsor> sponsors =      new HashSet<>();
+    private final Set<Mechanic<?>> mechanics = new HashSet<>();
 
     public Transport(String brand, String model, double engineVolume) {
         if (brand == null) {
@@ -59,9 +58,13 @@ public abstract class Transport {
 
     public void addDriver(Driver<?> driver) {
         drivers.add(driver);
-    } public void addSponsor(Sponsor sponsor) {
+    }
+
+    public void addSponsor(Sponsor sponsor) {
         sponsors.add(sponsor);
-    } public void addMechanic(Mechanic<?> mechanic) {
+    }
+
+    public void addMechanic(Mechanic<?> mechanic) {
         mechanics.add(mechanic);
     }
 
@@ -71,15 +74,28 @@ public abstract class Transport {
 
     }
 
-    public List<Driver<?>> getDrivers() {
+    public Set<Driver<?>> getDrivers() {
         return drivers;
     }
 
-    public List<Sponsor> getSponsors() {
+    public Set<Sponsor> getSponsors() {
         return sponsors;
     }
 
-    public List<Mechanic<?>> getMechanics() {
+    public Set<Mechanic<?>> getMechanics() {
         return mechanics;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model);
     }
 }
